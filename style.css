@@ -1,0 +1,122 @@
+*::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: antiquewhite;
+}
+
+button {
+  margin: 160px 15px;
+}
+
+.btn {
+  background-color: cadetblue;
+  color: #222;
+  padding: 12px 24px;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 8px;
+}
+
+.btn-border-pop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  border: 2px solid cadetblue;
+  border-radius: 8px;
+  transition: top, right, bottom, left, 0.2s ease-in-out;
+}
+
+.btn-border-pop:hover:before,
+.btn-border-pop:focus:before {
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+}
+
+.btn-backgraund-slide {
+  transition: color 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.btn-backgraund-slide:hover,
+.btn-backgraund-slide:focus {
+  color: #fff;
+}
+
+.btn-backgraund-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #0af;
+  z-index: -1;
+  transition: transform 0.3s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 8px;
+}
+
+.btn-backgraund-slide:hover:before,
+.btn-backgraund-slide:focus:before {
+  transform: scale(1);
+}
+
+.btn-backgraund-circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: cadetblue;
+  z-index: -1;
+  border-radius: 50%;
+  transform: scale(1.5);
+  transition: transform 0.5s ease-in-out;
+}
+
+.btn-backgraund-circle:hover:before,
+.btn-backgraund-circle:focus:before {
+  transform: scale(0);
+}
+
+.btn-backgraund-circle {
+  z-index: 1;
+  overflow: hidden;
+  background-color: #0afa;
+  transition: color 0.5s ease-in-out;
+}
+
+.btn-backgraund-circle:hover,
+.btn-backgraund-circle:focus {
+  color: #fff;
+}
+
+.btn-border-underline::before {
+  content: "";
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #0afa;
+}
